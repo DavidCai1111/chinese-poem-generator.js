@@ -1,12 +1,15 @@
 'use strict'
-require('@tensorflow/tfjs-node')
+require('@tensorflow/tfjs-node-gpu')
 const tf = require('@tensorflow/tfjs')
 const path = require('path')
 const model = require('./lib/model')
 const process = require('./lib/process')
 
 ;(async function () {
-  const preprocessResult = await process.readJSONFile(path.join(__dirname, './test/data/poet.song.91000.json'))
+  const preprocessResult = await process.readJSONFile(
+    path.join(__dirname, './test/data/poet.song.91000.json'),
+    200
+  )
 
   const rnnModel = model.getGeneratorModel(preprocessResult)
 
@@ -39,4 +42,3 @@ const process = require('./lib/process')
 
   await rnnModel.save(`file://${path.join(__dirname, './assets')}`)
 })().catch(console.error)
-
