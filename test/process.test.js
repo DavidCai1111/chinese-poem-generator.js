@@ -19,5 +19,7 @@ describe('process', function () {
     assert.strictEqual(result.charSet.has('扣橈'), false)
     assert.strictEqual(result.charSet.size > 100, true)
     assert.strictEqual(result.maxParagraphLen, 27)
+
+    console.log(result.inputSequences)
   })
 })
