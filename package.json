@@ -1,0 +1,36 @@
+{
+  "name": "chinese-poem-generator",
+  "version": "0.1.0",
+  "description": "Chinese poem generator in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint && mocha ./test",
+    "lint": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidCai1993/chinese-poem-generator.js.git"
+  },
+  "keywords": [
+    "chinese",
+    "poem",
+    "generator"
+  ],
+  "author": "DavidCai1993",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavidCai1993/chinese-poem-generator.js/issues"
+  },
+  "homepage": "https://github.com/DavidCai1993/chinese-poem-generator.js#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.7.0",
+    "@tensorflow/tfjs-node": "^1.7.0",
+    "@tensorflow/tfjs-node-gpu": "^1.7.0",
+    "commander": "^5.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.0",
+    "power-assert": "^1.6.1",
+    "standard": "^14.3.3"
+  }
+}
