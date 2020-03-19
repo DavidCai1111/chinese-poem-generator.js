@@ -26,7 +26,8 @@
     "@tensorflow/tfjs": "^1.7.0",
     "@tensorflow/tfjs-node": "^1.7.0",
     "@tensorflow/tfjs-node-gpu": "^1.7.0",
-    "commander": "^5.0.0"
+    "commander": "^5.0.0",
+    "hanzi-tools": "^1.2.21"
   },
   "devDependencies": {
     "mocha": "^7.1.0",
