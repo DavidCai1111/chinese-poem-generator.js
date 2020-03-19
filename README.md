@@ -2,7 +2,7 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 [![Build Status](https://travis-ci.org/DavidCai1993/chinese-poem-generator.js.svg?branch=master)](https://travis-ci.org/DavidCai1993/chinese-poem-generator.js)
 
-Chinese poem generator in Node.js, using [TensorFlow.js](https://js.tensorflow.org/).
+[WIP] Chinese poem generator in Node.js, using [TensorFlow.js](https://js.tensorflow.org/).
 
 ## Some Examples
 
