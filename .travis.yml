@@ -1,0 +1,10 @@
+sudo: required
+
+language: node_js
+
+node_js:
+  - '13'
+
+script: npm test
+
+after_script: "npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"

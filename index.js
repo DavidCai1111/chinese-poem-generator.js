@@ -2,7 +2,7 @@
 require('@tensorflow/tfjs-node-gpu')
 const tf = require('@tensorflow/tfjs')
 const path = require('path')
-const model = require('./lib/model')
+// const model = require('./lib/model')
 const process = require('./lib/process')
 
 ;(async function () {
@@ -11,34 +11,24 @@ const process = require('./lib/process')
     200
   )
 
-  const rnnModel = model.getGeneratorModel(preprocessResult)
+  // const rnnModel = model.getGeneratorModel(preprocessResult)
 
-  const dataSet = tf.data.generator(function () {
-    let i = 0
-    const batchSize = 3000
+  // await model.train(
+  //   rnnModel,
+  //   preprocessResult.inputs,
+  //   preprocessResult.labelsOnehot,
+  //   path.join(__dirname, './assets')
+  // )
 
-    const iterator = {
-      next: () => {
-        const value = {
-          xs: tf.tensor(preprocessResult.inputs.slice(i, i + batchSize)),
-          ys: tf.tensor(preprocessResult.labelsOnehot.slice(i, i + batchSize))
-        }
+  const rnnModel = await tf.loadLayersModel(`file://${path.join(__dirname, './assets/model.json')}`)
 
-        i = i + batchSize
+  const chars = '一人'
 
-        const done = i >= preprocessResult.labelsOnehot.length
+  const inputs = process.charsToInput(chars, preprocessResult)
 
-        return { value, done }
-      }
-    }
+  const [predictedOnehot] = rnnModel.predict(tf.tensor(inputs, [1, 18])).arraySync()
 
-    return iterator
-  })
+  const predictedChar = process.oneHotToChar(predictedOnehot, preprocessResult.charSetArray)
 
-  await rnnModel.fitDataset(
-    dataSet,
-    { epochs: 100, verbose: 1 }
-  )
-
-  await rnnModel.save(`file://${path.join(__dirname, './assets')}`)
+  console.log({ predictedChar })
 })().catch(console.error)
