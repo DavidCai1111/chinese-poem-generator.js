@@ -17,7 +17,7 @@ node ./generator.js generate -b 天下大同
 ```
 
 ```js
-node ./generator.js generate -f 一二三四
+node ./generator.js generate -b 一二三四
 
 // Output:
 一二三四芬聊荒，只有欢日病烟。
@@ -27,7 +27,7 @@ node ./generator.js generate -f 一二三四
 ```
 
 ```js
-node ./generator.js generate -f 他是沙雕
+node ./generator.js generate -b 他是沙雕
 
 // Output:
 他是沙雕金捧白环，欢今成水旧穷。
