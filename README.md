@@ -38,7 +38,7 @@ node ./generator.js generate -b 他是沙雕
 // 请君听钟鱼，尚想吹紫玉。
 ```
 
-### Generate Poem by giving First Characters / 根据每局首字作藏头诗
+### Generate Poem by giving First Characters / 根据每句首字作藏头诗
 
 ```js
 node ./generator.js generate -f 天下大同
